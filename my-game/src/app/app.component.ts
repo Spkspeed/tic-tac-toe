@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-game';
+  onClick(){
+    console.log("You has clicked a span")
+  }
 }
