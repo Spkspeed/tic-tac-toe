@@ -2,7 +2,7 @@ import { Status } from "./gamestatus";
 
 export class GameLogic {
     gameField: Array<number> = [];
-    gameTurn: number | undefined;
+    currentTurn: number | undefined;
     gameStatus: Status;
     public constructor(){
         this.gameStatus = Status.STOP;
@@ -11,8 +11,9 @@ export class GameLogic {
 
     gameStart(): void{
         this.gameField = [0,0,0,0,0,0,0,0,0];
-        this.gameTurn = this.randomPlayerStart();
+        this.currentTurn = this.randomPlayerStart();
         this.gameStatus = Status.START;
+        console.log("the game is running")
     }
 
     randomPlayerStart(): number{

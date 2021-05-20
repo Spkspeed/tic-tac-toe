@@ -1,4 +1,5 @@
 import { Component , OnInit} from '@angular/core';
+import { never } from 'rxjs';
 import { GameLogic } from './game-logic';
 
 @Component({
@@ -14,14 +15,15 @@ constructor(public game: GameLogic){
 
 startGame(): void{
   this.game.gameStart();
-  
 }
-
-async clickSpan( card: any): Promise<void>{
+Onclick(event: any){
+}
+async clickSpan( span: any ): Promise<void>{
   if(this.game.gameStatus === 1){
-    const position = 
-    console.log("The game start");
-    
+    const position = {
+      alignment: span.target.getAttribute('position')
+    };
+    console.log(position);
   }
 }
 ngOnInit(){}
