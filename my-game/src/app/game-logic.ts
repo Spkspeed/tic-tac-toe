@@ -20,6 +20,10 @@ export class GameLogic {
         const startPlayer =  Math.floor(Math.random() * 2) + 1;
         return startPlayer;
     }
+
+    setSpan(position: number, value: number): void{
+        this.gameField[position] = value;
+    }
     
 
 }

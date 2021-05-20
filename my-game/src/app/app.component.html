@@ -51,6 +51,7 @@
     align-items: center;
     transition: all 0.2s ease-in-out;
     line-height: 24px;
+
   }
 
   .card-container .card:not(:last-child) {
@@ -82,47 +83,48 @@
 
   <!-- botones -->
   <h2>TIC TAC TOE</h2>
-  <p>Click for start the game</p>
+  <p [innerHTML]="htmlStr"></p>
   <div>
-    <button (click)="clickSpan($event)" position="10" >Start</button>
+    <button (click)="startGame()" >Start</button>
   </div>
 
-  <div class="card-container">
-    <a class="card" position="0">
+  <div *ngIf="this.game.gameStatus === 1" class="card-container">
+    <a (click)="clickSpan($event)" class="card" position="0">
       <span></span>
     </a>
 
-    <a  class="card" position="1">
+    <a (click)="clickSpan($event)" class="card" position="1">
       <span>Second Button</span>
     </a>
 
-    <a class="card" position="2">
+    <a (click)="clickSpan($event)" class="card" position="2">
       <span>Third Button</span>
     </a>
 
-    <a  class="card" position="3">
+    <a (click)="clickSpan($event)" class="card" position="3">
       <span>Fourth Button</span>
     </a>
     
-    <a  class="card" position="4">
+    <a (click)="clickSpan($event)" class="card" position="4">
       <span>FIfth Button</span>
     </a>
     
-    <a class="card" position="5">
+    <a (click)="clickSpan($event)" class="card" position="5">
       <span>Sixth Button</span>
     </a>
     
-    <a class="card" position="6">
+    <a (click)="clickSpan($event)" class="card" position="6">
       <span>Seventh Button</span>
     </a>
     
-    <a class="card" position="8">
+    <a (click)="clickSpan($event)" class="card" position="8">
       <span>Eight Button</span>
     </a>
     
-    <a class="card" position="9">
+    <a (click)="clickSpan($event)" class="card" position="9">
       <span>Ninth Button</span>
     </a>
+  
   </div>
 
 </div>

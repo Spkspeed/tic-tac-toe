@@ -12,9 +12,12 @@ export class AppComponent implements OnInit{
 constructor(public game: GameLogic){
 
 }
-
+htmlStr: string = 'Presione el boton para comenzar'
 startGame(): void{
   this.game.gameStart();
+  this.htmlStr = 'El turno es del jugador ' + this.game.currentTurn;
+
+  
 }
 Onclick(event: any){
 }
