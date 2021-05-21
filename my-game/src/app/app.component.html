@@ -53,6 +53,41 @@
     line-height: 24px;
 
   }
+  .card-blue {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #0010f0;
+    height: 100px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .card-red {
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #f00000;
+    height: 100px;
+    width: 200px;
+    margin: 0 8px 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+  }
+
+  .player-one{
+    background: rgb(red, green, blue);
+  }
 
   .card-container .card:not(:last-child) {
     margin-right: 0;
@@ -94,35 +129,35 @@
     </a>
 
     <a (click)="clickSpan($event)" class="card" position="1">
-      <span>Second Button</span>
+      <span></span>
     </a>
 
     <a (click)="clickSpan($event)" class="card" position="2">
-      <span>Third Button</span>
+      <span></span>
     </a>
 
     <a (click)="clickSpan($event)" class="card" position="3">
-      <span>Fourth Button</span>
+      <span></span>
     </a>
     
     <a (click)="clickSpan($event)" class="card" position="4">
-      <span>FIfth Button</span>
-    </a>
+      <span></span>
+    </a>  
     
     <a (click)="clickSpan($event)" class="card" position="5">
-      <span>Sixth Button</span>
+      <span></span>
     </a>
     
-    <a (click)="clickSpan($event)" class="card" position="6">
-      <span>Seventh Button</span>
+    <a (click)="clickSpan($event)" class="card " position="6">
+      <span></span>
+    </a>
+    
+    <a (click)="clickSpan($event)" class="card" position="7">
+      <span></span>
     </a>
     
     <a (click)="clickSpan($event)" class="card" position="8">
-      <span>Eight Button</span>
-    </a>
-    
-    <a (click)="clickSpan($event)" class="card" position="9">
-      <span>Ninth Button</span>
+      <span></span>
     </a>
   
   </div>

@@ -24,6 +24,13 @@ export class GameLogic {
     setSpan(position: number, value: number): void{
         this.gameField[position] = value;
     }
+
+
+
+    getPlayerColor(): string {
+        const colorClass = (this.currentTurn === 2) ? 'card-red' : 'card-blue';
+        return colorClass;
+    }
     
 
 }
