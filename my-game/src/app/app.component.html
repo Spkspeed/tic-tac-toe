@@ -30,7 +30,7 @@
     fill: #888;
   }
 
-  .card-container {
+  .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -53,7 +53,7 @@
     line-height: 24px;
 
   }
-  .card-blue {
+  .player2 {
     border-radius: 4px;
     border: 1px solid #eee;
     background-color: #0010f0;
@@ -69,7 +69,7 @@
     line-height: 24px;
   }
 
-  .card-red {
+  .player1 {
     border-radius: 4px;
     border: 1px solid #eee;
     background-color: #f00000;
@@ -85,11 +85,7 @@
     line-height: 24px;
   }
 
-  .player-one{
-    background: rgb(red, green, blue);
-  }
-
-  .card-container .card:not(:last-child) {
+  .container .card:not(:last-child) {
     margin-right: 0;
   }
 
@@ -99,16 +95,16 @@
   }
 
   
-  .card-container .card:not(.highlight-card) {
+  .container .card:not(.highlight-card) {
     cursor: pointer;
   }
 
-  .card-container .card:not(.highlight-card):hover {
+  .container .card:not(.highlight-card):hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
   }
 
-  .card-container .card:not(.highlight-card):hover .material-icons path {
+  .container .card:not(.highlight-card):hover .material-icons path {
     fill: rgb(105, 103, 103);
   }
 </style>
@@ -123,7 +119,7 @@
     <button (click)="startGame()" >Start</button>
   </div>
 
-  <div *ngIf="this.game.gameStatus === 1" class="card-container">
+  <div *ngIf="this.game.gameStatus === 1" class="container">
     <a (click)="clickSpan($event)" class="card" position="0">
       <span></span>
     </a>

@@ -2,7 +2,9 @@ import { Status } from "./gamestatus";
 
 export class GameLogic {
     gameField: Array<number> = [];
-    currentTurn: number | undefined;
+    currentTurn!: number;
+
+
     gameStatus: Status;
     public constructor(){
         this.gameStatus = Status.STOP;
@@ -26,11 +28,12 @@ export class GameLogic {
     }
 
 
-
     getPlayerColor(): string {
-        const colorClass = (this.currentTurn === 2) ? 'card-red' : 'card-blue';
+        const colorClass = (this.currentTurn === 2) ? 'player1' : 'player2';
         return colorClass;
     }
-    
-
+ 
+    changePlayer(): void{
+        this.currentTurn = (this.currentTurn===2) ? 1:2;
+    }
 }
