@@ -115,8 +115,12 @@
   <!-- botones -->
   <h2>TIC TAC TOE</h2>
   <p [innerHTML]="htmlStr"></p>
-  <div>
+  <div *ngIf="this.game.gameStatus === 0">
     <button (click)="startGame()" >Start</button>
+  </div>
+
+  <div *ngIf="htmlStr1 === 1">
+    <button (click)="startGame()">Reiniciar</button>
   </div>
 
   <div *ngIf="this.game.gameStatus === 1" class="container">

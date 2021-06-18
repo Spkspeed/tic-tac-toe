@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
   constructor(public game: GameLogic) {
 
   }
-  htmlStr: string = 'Presione el boton para comenzar'
+  htmlStr: string = 'Presione el boton para comenzar';
+  htmlStr1: number = 0;
 
   startGame(): void {
     this.game.gameStart();
@@ -22,16 +23,25 @@ export class AppComponent implements OnInit {
   }
   async clickSpan(span: any): Promise<void> {
     if (this.game.gameStatus === 1) {
-      const valor = span.currentTarget.getAttribute('position');
-      console.log("la posicion del cuadrado es: " + valor);
-      let className: String = span.currentTarget.getAttribute('class');
+      let className: string = span.currentTarget.getAttribute('class');
       console.log("el nombre de la clase es: " + className);
-      const colorClass = this.game.getPlayerColor();
 
       if (className == "card") {
+        const valor: number = span.currentTarget.getAttribute('position');
+        console.log("la posicion del cuadrado es: " + valor);
+
+        const colorClass = this.game.getPlayerColor();
+
         this.game.setSpan(valor, this.game.currentTurn);
         span.currentTarget.classList.replace(className, colorClass);
+
+        if(this.game.checkIfTheSpansAreFull()){
+          this.htmlStr1 = 1;
+          this.htmlStr = "las cuadriculas se llenaron sin ganador, es un empate"
+        }
+        this.game.checkIfTheGameEnd(valor, colorClass);
         this.game.changePlayer();
+
       } else if (className == "player1") {
         console.log("el cuadrado ya ha sido clickeado anteriormente");
       } else if (className == "player2") {
@@ -39,8 +49,14 @@ export class AppComponent implements OnInit {
       } else {
         console.log("no has clickeado ningun cuadrado");
       }
+
+      if (this.game.gameStatus == 1) {
+        this.htmlStr = 'El turno es del jugador ' + this.game.currentTurn;
+
+      }
+
     }
   }
+  //por razones que desconozco esto es necesario para que el programa funcione
   ngOnInit() { }
-
 }
