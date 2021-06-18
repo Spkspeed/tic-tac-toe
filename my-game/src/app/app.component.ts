@@ -35,11 +35,12 @@ export class AppComponent implements OnInit {
         this.game.setSpan(valor, this.game.currentTurn);
         span.currentTarget.classList.replace(className, colorClass);
 
+        this.game.checkIfTheGameEnd(valor, colorClass);
+
         if(this.game.checkIfTheSpansAreFull()){
           this.htmlStr1 = 1;
           this.htmlStr = "las cuadriculas se llenaron sin ganador, es un empate"
         }
-        this.game.checkIfTheGameEnd(valor, colorClass);
         this.game.changePlayer();
 
       } else if (className == "player1") {
